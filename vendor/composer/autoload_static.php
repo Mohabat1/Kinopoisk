@@ -24,6 +24,9 @@ class ComposerStaticInit3369028fd75e82f2cef72f99d5f314cc
         ),
         'A' => 
         array (
+            'App\\Kernel\\Router\\' => 18,
+            'App\\Kernel\\Http\\' => 16,
+            'App\\Kernel\\' => 11,
             'App\\' => 4,
         ),
     );
@@ -44,6 +47,18 @@ class ComposerStaticInit3369028fd75e82f2cef72f99d5f314cc
         'Database\\Factories\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/pint/database/factories',
+        ),
+        'App\\Kernel\\Router\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Kernel/Router',
+        ),
+        'App\\Kernel\\Http\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Kernel/Http',
+        ),
+        'App\\Kernel\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Kernel',
         ),
         'App\\' => 
         array (

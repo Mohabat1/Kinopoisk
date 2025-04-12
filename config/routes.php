@@ -1,12 +1,10 @@
 <?php
 
-use App\Router\Route;
+use App\Controller\HomeController;
+use App\Controller\MovieController;
+use App\Kernel\Router\Route;
 
-return[
-    Route::get('/home', function () {
-        require_once APP_PATH .  "/views/pages/home.php";
-    }),
-    Route::get('/movies', function () {
-        require_once APP_PATH .  "/views/pages/movies.php";
-    }),
+return [
+    Route::get('/home', [HomeController::class, 'index']),
+    Route::get('/movies', [MovieController::class, 'index'])
 ];
