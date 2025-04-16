@@ -29,11 +29,14 @@ class MovieController extends Controller
             foreach ($this->request()->errors() as $field => $error){
                 $this->session()->set("name.errors", $this->request()->errors());
             }
-            dd($_SESSION);
 
             $this->redirect('/admin/movies/add');
         }
 
-        dd('validation passed');
+
+        $id = $this->db()->insert('movie', [
+            'name' => $this->request()->input('name'),
+        ]);
+        dd("Movie added successfully with id: " . $id);
     }
 }

@@ -6,3 +6,5 @@ config:
 services:
   phpmyadmin:
     type: phpmyadmin
+    ini:
+      - pdo_mysql

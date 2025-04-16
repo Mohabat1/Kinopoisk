@@ -19,8 +19,24 @@ class Database implements DatabaseInterface
 
     public function insert(string $table, array $data): int|false
     {
-        // Тут можно позже дописать логику вставки данных
-        return false;
+       $fileds = array_keys($data);
+
+       $columns = implode(', ', $fileds);
+       $binds = implode(', ', array_map(fn($field) => ":$field", $fileds));
+
+       $sql = "INSERT INTO $table ($columns) VALUES ($binds)";
+
+
+       $stmt = $this ->pdo->prepare($sql);
+       $stmt->execute($data);
+
+       try{
+              $stmt->execute($data);
+         }catch (PDOException $exception){
+           return false;
+       }
+       return $this->pdo->lastInsertId();
+
     }
 
     private function connect(): void
@@ -33,7 +49,11 @@ class Database implements DatabaseInterface
         $username = $this->config->get('database.username');
         $password = $this->config->get('database.password');
 
-        $dsn = "$driver:host=$host;port=$port;dbname=$dbname;charset=$charset";
+        $dsn = "mysql:host=database;port=3306;dbname=kinopoisk;charset=utf8";
+        $username = 'root';
+        $password = '123456';
+        $pdo = new PDO($dsn, $username, $password);
+
 
         try {
             $this->pdo = new PDO($dsn, $username, $password);
