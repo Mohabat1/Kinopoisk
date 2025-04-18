@@ -13,6 +13,7 @@ $user = $auth->user();
         <h3>User: <?php echo $user->email() ?? 'Гость'; ?></h3>
         <form action="/logout" method="post">
             <button>Logout</button>
+        </form>
         <hr>
     <?php  } ?>
 </header>

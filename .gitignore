@@ -1,6 +1,7 @@
 /vendor/
 /.idea/
 /.env
+/public/storage
 composer.lock
 node_modules/
 *.log

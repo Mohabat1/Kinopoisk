@@ -5,7 +5,7 @@ namespace App\Kernel\Middleware;
 class Middleware implements MiddlewareInterface
 {
 
-    public function check(array $midlewares): void
+    public function check(array $middlewares = []): void
     {
 
     }

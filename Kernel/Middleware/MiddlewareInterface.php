@@ -4,5 +4,5 @@ namespace App\Kernel\Middleware;
 
 interface MiddlewareInterface
 {
-public function check(array $midlewares): void;
+public function check(array $middlewares = []): void;
 }
